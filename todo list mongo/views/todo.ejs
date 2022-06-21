@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Todo App</title>
+    <!-- <script>
+        src="https://kit.fontawesome.com/a076d05399.js"
+    </script> -->
+     <link rel="stylesheet" href="/static/stylesheets/myStyle.css" type="text/css"> 
+</head>
+
+<body>
+    <main>
+        <div class="container">
+          
+            <div class ="split left">
+                <div class="init">
+                    <h6 class='initials'>PM</h6>
+                    <h5 class='name'>Cardwell Masilela</h5>
+                </div>
+
+                <input type="text" name="search" placeholder='Search' class='search'></input>
+                <br>
+                <br>
+                <div class='menu'>
+                    <h4><img src="/images/calendar.png" width="20" alt="">My Day</h4>
+
+                    <h4>  <img src="/images/star.png" width="20" alt="">Important</h4>
+                
+                    <h4><img src="/images/infinity.png" width="20" alt="">All</h4>
+                
+                     <h4><img src="/images/check-mark.png" width="20" alt="">Completed</h4>
+                
+                     <h4><img src="/images/Sample_User_Icon.png" width="20" alt="">Assign to me</h4>
+                
+                     <h4> <img src="/images/task-done-solid.png" width="20" alt="">Task</h4>
+
+                     <hr></hr>
+                     <h4>
+                     <img src="/images/list.png" width="20" alt=""/>Projects
+                     </h4>
+
+            </div>
+            <div class='split right'>
+                <h2 class='ToDower'>ToDo</h2>
+
+                    <div>
+                        <% todoTasks.forEach(details=> { %>
+                            <div class="todo-list-item">
+                                <div class="todoV">
+                                   
+                                    <h5 class='doing'><%= details.content %></h5>
+                                     
+                                
+                                <div class="Ico">
+                                <a  href="/edit/<%= details._id %>"><img src="/images/images (1).png"width="20"></img></a>
+                                <a href="/remove/<%= details._id %>"><img class ='i21' src="/images/images.png" width="20"></img></a>
+                            </div>
+                           <br>
+                            </div>
+                        </div>
+                            <% }) %>
+                        </div>
+    
+
+                <form action="/" method="POST" class="todo-header">
+                    <div className='Addmy'></div>
+                    <input type="text" placeholder='+         Add a Task' class='newTask' name="content"></input>
+                    <button type="submit" class='Addto'>Add To Task</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
